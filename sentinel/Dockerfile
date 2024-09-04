@@ -19,4 +19,4 @@ ARG REDIS_FAILOVER_TIMEOUT_MS
 ARG SENTINEL_PARALLEL_SYNCS
 
 ENTRYPOINT ["entrypoint.sh"]
-CMD ["redis-server", "/usr/local/etc/sentinel.conf", "--sentinel"]
+CMD ["redis-server", "/usr/local/etc/sentinel.conf", "--sentinel", "--loglevel", "debug"]
