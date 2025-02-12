@@ -1,0 +1,8 @@
+name: "Custom based on flagged, based on number of flagged"
+description: "Custom based on flagged, and number of flagged messages"
+type: "triage_rule"
+triage_flagged_messages: true
+default_actions: ["quarantine_message"]
+source: |
+  type.inbound
+  and length(triage.flagged_rules) > 3
