@@ -1,8 +1,8 @@
-name: "Custom herd immunity"
-description: "Custom automation for herd immunity"
+name: "Custom based on number of flagged"
+description: "Custom based on number of flagged messages"
 type: "triage_rule"
 triage_abuse_reports: true
 default_actions: ["quarantine_message"]
 source: |
   type.inbound
-  and triage.user_reports.count > 5
+  and length(triage.flagged_rules) > 3
