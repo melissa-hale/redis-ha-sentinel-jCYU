@@ -1,4 +1,4 @@
-name: "CUSTOM: Service Abuse: Dropbox Share From New Domain"
+name: "CUSTOM: m 'Service Abuse: Dropbox Share From New Domain"
 description: "This Attack Surface Reduction (ASR) rule matches on Dropbox notifications with recently registered reply-to domains."
 type: "rule"
 severity: "medium"
