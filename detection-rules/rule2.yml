@@ -4,7 +4,7 @@ type: "rule"
 severity: "medium"
 source: |
   type.inbound
-  and sender.email.email == "belvitasnacks@gmail.com.com"
+  and sender.email.email == "belvitasnacks@gmail.com"
 tags:
  - "Attack surface reduction"
 attack_types:
