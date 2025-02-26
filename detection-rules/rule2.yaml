@@ -4,8 +4,6 @@ type: "rule"
 severity: "medium"
 source: |
   type.inbound
-  
-  //  Dropbox actual sending infrastructure
   and sender.email.email == "belvitasnacks@gmail.com.com"
 tags:
  - "Attack surface reduction"
