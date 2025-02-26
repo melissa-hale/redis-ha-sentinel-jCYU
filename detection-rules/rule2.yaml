@@ -1,0 +1,22 @@
+name: "CUSTOM: m 'Service Abuse: Dropbox Share From New Domain"
+description: "This Attack Surface Reduction (ASR) rule matches on Dropbox notifications with recently registered reply-to domains."
+type: "rule"
+severity: "medium"
+source: |
+  type.inbound
+  
+  //  Dropbox actual sending infrastructure
+  and sender.email.email == "belvitasnacks@gmail.com.com"
+tags:
+ - "Attack surface reduction"
+attack_types:
+  - "Callback Phishing"
+  - "Credential Phishing"
+  - "BEC/Fraud"
+tactics_and_techniques:
+  - "Evasion"
+  - "Social engineering"
+detection_methods:
+  - "Content analysis"
+  - "Sender analysis"
+  - "Header analysis"
