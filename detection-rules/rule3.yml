@@ -1,7 +1,7 @@
 name: "CUSTOM: test type field behavior"
 description: "This is a test rule from my private feed, testing the behavior of the type field."
 severity: "critical"
-type: rule
+type: query
 source: |
   type.inbound
   
