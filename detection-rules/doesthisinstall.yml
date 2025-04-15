@@ -1,4 +1,4 @@
-name: "Does this get installed"
+name: "AA Does this get installed"
 description: "testing what happens when auto activate is off, can i access via the rules endpoint"
 type: "rule"
 severity: "medium"
