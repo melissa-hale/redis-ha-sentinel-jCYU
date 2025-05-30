@@ -32,9 +32,9 @@ source: |
 type: rule
 name: Test Evilcorp Microsoft
 authors:
-  - name: Chris Vaughan
-description: Rule to discover EvilCorp
+- name: Chris Vaughan
+description: Rule to discover EvilCorp 
+references: []
 tags:
-  - Testing
-attack_types: 
-  - "BEC/Fraud"
+- Testing
+attack_types: "BEC/Fraud"
