@@ -1,14 +1,40 @@
-name: "Detect suspicious senders"
-description: "This is a test rule from my private feed, testing the hunt script."
-severity: "high"
-type: rule
+# name: "Detect suspicious senders"
+# description: "This is a test rule from my private feed, testing the hunt script."
+# severity: "high"
+# type: rule
+# source: |
+#   type.inbound
+  
+#   //  Dropbox actual sending infrastructure
+#   and sender.email.email == "belvitasnacks@gmail.com"
+#   and headers.auth_summary.spf.pass
+#   and headers.auth_summary.dmarc.pass
+  
+# tags:
+#  - "Test-hunts"
+
+
 source: |
-  type.inbound
-  
-  //  Dropbox actual sending infrastructure
-  and sender.email.email == "belvitasnacks@gmail.com"
-  and headers.auth_summary.spf.pass
-  and headers.auth_summary.dmarc.pass
-  
+ type.inbound
+ and 
+ any(attachments,
+   (
+    .file_type in $file_types_images
+    or .file_type == "jpg"
+    or .file_type in~ $file_extensions_macros
+   )
+   and (
+    any(ml.logo_detect(.).brands, strings.starts_with(.name, "Microsoft"))))
+
+  and any(body.links,
+    .href_url.domain.root_domain == "evilcorp.com"
+   )
+type: rule
+name: Test Evilcorp Microsoft
+authors:
+  - name: Chris Vaughan
+description: Rule to discover EvilCorp
 tags:
- - "Test-hunts"
+  - Testing
+attack_types: 
+  - "BEC/Fraud"
