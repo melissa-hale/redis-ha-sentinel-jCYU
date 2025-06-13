@@ -1,0 +1,12 @@
+name: "AA Does this get installed"
+description: "testing what happens when auto activate is off, can i access via the rules endpoint"
+type: "rule"
+severity: "medium"
+source: |
+  type.inbound
+  
+  //  Dropbox actual sending infrastructure
+  and sender.email.email == "no-reply@dropbox.com"
+  and headers.auth_summary.spf.pass
+  and headers.auth_summary.dmarc.pass
+  
